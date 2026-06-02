@@ -259,12 +259,13 @@ def create_difference_plot(plot_data, max_points_df, distance):
 def _render_math_description():
     st.markdown(
         """
-        Dla funkcji ciągłych \\(f, g : J \\to \\mathbb{R}\\), gdzie
-        \\(J=[a,b]\\), aplikacja numerycznie wyznacza odległość supremum:
+        Aplikacja porównuje dwie funkcje na wybranym przedziale `[a, b]`.
+        Dla każdego punktu sprawdza, jak bardzo różnią się wartości `f(x)` i
+        `g(x)`, a następnie znajduje największą z tych różnic.
 
-        \\[
-        d_\\infty(f,g)=\\max_{x \\in [a,b]} |f(x)-g(x)|.
-        \\]
+        Wynik `d∞(f,g)` oznacza największą wartość `|f(x) - g(x)|` na całym
+        badanym przedziale. Na wykresie zaznaczone są punkty, w których ta
+        największa różnica jest osiągana z podaną dokładnością.
         """
     )
 
