@@ -272,7 +272,14 @@ def _render_function_cheatsheet():
 
         **Funkcje**
 
-        `sin`, `cos`, `tan`, `atan`, `arctan`, `exp`, `log`, `sqrt`, `abs`
+        - `sin(x)` - sinus
+        - `cos(x)` - cosinus
+        - `tan(x)` - tangens
+        - `atan(x)`, `arctan(x)` - arcus tangens
+        - `exp(x)` - funkcja wykładnicza, czyli e do potęgi x
+        - `log(x)` - logarytm naturalny
+        - `sqrt(x)` - pierwiastek kwadratowy
+        - `abs(x)` - wartość bezwzględna
 
         **Przykłady**
 
