@@ -259,39 +259,33 @@ def create_difference_plot(plot_data, max_points_df, distance):
 
 
 def _render_function_cheatsheet():
-    with st.sidebar.expander("Ściąga: jak wpisywać funkcje", expanded=False):
-        st.markdown(
-            """
-            **Najważniejsze zasady**
+    st.sidebar.divider()
+    st.sidebar.subheader("Ściąga do funkcji")
+    st.sidebar.markdown(
+        """
+        **Zasady zapisu**
 
-            - Zmienna musi nazywać się `x`.
-            - Mnożenie zapisuj przez `*`, np. `2*x`.
-            - Potęgi zapisuj przez `**`, np. `x**2`.
-            - Ułamki możesz wpisywać normalnie, np. `x**2 / 4`.
-            - Stałe: `pi`, `E`.
+        - zmienna: `x`
+        - mnożenie: `2*x`
+        - potęga: `x**2`
+        - stałe: `pi`, `E`
 
-            **Dostępne funkcje**
+        **Funkcje**
 
-            `sin(x)`, `cos(x)`, `tan(x)`, `atan(x)`, `arctan(x)`,
-            `exp(x)`, `log(x)`, `sqrt(x)`, `abs(x)`
+        `sin`, `cos`, `tan`, `atan`, `arctan`, `exp`, `log`, `sqrt`, `abs`
 
-            **Przykłady**
+        **Przykłady**
 
-            ```text
-            sin(x)
-            sin(x) + tan(x)
-            arctan(x + 4)
-            x**2 / 4
-            exp(-x**2)
-            sqrt(abs(x))
-            log(x)
-            cos(pi*x)
-            ```
-
-            Uwaga: `log(x)` działa tylko tam, gdzie `x > 0`. Punkty, w których
-            funkcja nie ma poprawnej wartości, są pomijane w obliczeniach.
-            """
-        )
+        ```text
+        sin(x)
+        sin(x) + tan(x)
+        arctan(x + 4)
+        x**2 / 4
+        exp(-x**2)
+        sqrt(abs(x))
+        ```
+        """
+    )
 
 
 def _render_math_description():
