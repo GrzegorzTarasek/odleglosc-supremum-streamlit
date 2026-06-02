@@ -15,6 +15,8 @@ ALLOWED_LOCALS = {
     "sin": sp.sin,
     "cos": sp.cos,
     "tan": sp.tan,
+    "atan": sp.atan,
+    "arctan": sp.atan,
     "exp": sp.exp,
     "log": sp.log,
     "sqrt": sp.sqrt,
@@ -24,7 +26,7 @@ ALLOWED_LOCALS = {
     "E": sp.E,
 }
 
-ALLOWED_FUNCTIONS = {sp.sin, sp.cos, sp.tan, sp.exp, sp.log, sp.Abs}
+ALLOWED_FUNCTIONS = {sp.sin, sp.cos, sp.tan, sp.atan, sp.exp, sp.log, sp.Abs}
 
 
 def create_function(function_text):
@@ -256,6 +258,42 @@ def create_difference_plot(plot_data, max_points_df, distance):
     return fig
 
 
+def _render_function_cheatsheet():
+    with st.sidebar.expander("Ściąga: jak wpisywać funkcje", expanded=False):
+        st.markdown(
+            """
+            **Najważniejsze zasady**
+
+            - Zmienna musi nazywać się `x`.
+            - Mnożenie zapisuj przez `*`, np. `2*x`.
+            - Potęgi zapisuj przez `**`, np. `x**2`.
+            - Ułamki możesz wpisywać normalnie, np. `x**2 / 4`.
+            - Stałe: `pi`, `E`.
+
+            **Dostępne funkcje**
+
+            `sin(x)`, `cos(x)`, `tan(x)`, `atan(x)`, `arctan(x)`,
+            `exp(x)`, `log(x)`, `sqrt(x)`, `abs(x)`
+
+            **Przykłady**
+
+            ```text
+            sin(x)
+            sin(x) + tan(x)
+            arctan(x + 4)
+            x**2 / 4
+            exp(-x**2)
+            sqrt(abs(x))
+            log(x)
+            cos(pi*x)
+            ```
+
+            Uwaga: `log(x)` działa tylko tam, gdzie `x > 0`. Punkty, w których
+            funkcja nie ma poprawnej wartości, są pomijane w obliczeniach.
+            """
+        )
+
+
 def _render_math_description():
     st.markdown(
         """
@@ -288,6 +326,7 @@ def main():
         g_text = st.text_input("g(x)", value="x**2 / 4")
         epsilon = st.number_input("epsilon", value=0.001, min_value=0.0, format="%.8f")
         calculate_clicked = st.button("Oblicz", type="primary")
+        _render_function_cheatsheet()
 
     if not calculate_clicked:
         st.info("Wpisz dane w panelu bocznym i kliknij Oblicz.")

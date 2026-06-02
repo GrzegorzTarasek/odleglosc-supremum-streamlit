@@ -103,7 +103,7 @@ cos(pi*x)
 Obsługiwane funkcje:
 
 ```text
-sin, cos, tan, exp, log, sqrt, abs
+sin, cos, tan, atan, arctan, exp, log, sqrt, abs
 ```
 
 Obsługiwane stałe:
