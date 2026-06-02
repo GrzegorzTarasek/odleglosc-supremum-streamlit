@@ -268,6 +268,7 @@ def _render_function_cheatsheet():
         - zmienna: `x`
         - mnożenie: `2*x`
         - potęga: `x**2`
+        - pierwiastek n-tego stopnia: `x**(1/n)`
         - stałe: `pi`, `E`
 
         **Funkcje**
@@ -281,6 +282,15 @@ def _render_function_cheatsheet():
         - `sqrt(x)` - pierwiastek kwadratowy
         - `abs(x)` - wartość bezwzględna
 
+        **Przydatne zapisy**
+
+        - pierwiastek kwadratowy: `sqrt(x)` albo `x**(1/2)`
+        - pierwiastek sześcienny: `x**(1/3)`
+        - pierwiastek czwartego stopnia: `x**(1/4)`
+        - odwrotność: `1/x`
+        - potęga ujemna: `x**(-2)`
+        - ułamek z wyrażeniem: `(x + 1) / (x**2 + 4)`
+
         **Przykłady**
 
         ```text
@@ -288,6 +298,8 @@ def _render_function_cheatsheet():
         sin(x) + tan(x)
         arctan(x + 4)
         x**2 / 4
+        x**(1/3)
+        (x + 1) / (x**2 + 4)
         exp(-x**2)
         sqrt(abs(x))
         ```
