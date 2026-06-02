@@ -333,11 +333,11 @@ def main():
 
     with st.sidebar:
         st.header("Dane wejściowe")
-        a = st.number_input("a", value=-2.0, format="%.6f")
-        b = st.number_input("b", value=2.0, format="%.6f")
+        a = st.number_input("a", value=-2.0, format="%.3f")
+        b = st.number_input("b", value=2.0, format="%.3f")
         f_text = st.text_input("f(x)", value="sin(x)")
         g_text = st.text_input("g(x)", value="x**2 / 4")
-        epsilon = st.number_input("epsilon", value=0.001, min_value=0.0, format="%.8f")
+        epsilon = st.number_input("epsilon", value=0.001, min_value=0.0, format="%.3f")
         calculate_clicked = st.button("Oblicz", type="primary")
         _render_function_cheatsheet()
 
@@ -370,7 +370,7 @@ def main():
     st.latex(
         rf"f(x)={sp.latex(f_expression)}, \quad g(x)={sp.latex(g_expression)}"
     )
-    st.metric("d∞(f,g)", f"{distance:.10g}")
+    st.metric("d∞(f,g)", f"{distance:.3f}")
 
     st.plotly_chart(create_functions_plot(plot_data), use_container_width=True)
     st.plotly_chart(
@@ -382,7 +382,16 @@ def main():
     if max_points_df.empty:
         st.warning("Nie znaleziono punktów spełniających zadany warunek.")
     else:
-        st.dataframe(max_points_df, use_container_width=True)
+        st.dataframe(
+            max_points_df,
+            use_container_width=True,
+            column_config={
+                "x": st.column_config.NumberColumn("x", format="%.3f"),
+                "|f(x)-g(x)|": st.column_config.NumberColumn(
+                    "|f(x)-g(x)|", format="%.3f"
+                ),
+            },
+        )
 
 
 if __name__ == "__main__":
